@@ -49,7 +49,7 @@ public class doctoresUIcontrolador {
  }
  
  @GetMapping("/eliminar/{id_doctor}")
- public String eliminar(@PathVariable("id") Long id_doctor, Model model){
+ public String eliminar(@PathVariable("id_doctor") Long id_doctor, Model model){
      servicio.eliminar(id_doctor);
      return "redirect:/doctores";
  }
