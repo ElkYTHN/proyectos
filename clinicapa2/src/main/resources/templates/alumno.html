@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Crear Alumno</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h2>Agregar Alumno</h2>
+            <form action="#" th:action="@{/guardar}" th:object="${alumno}" method="post">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" th:field="*{nombre}" name="nombre">
+                </div>
+                <input type="hidden" th:field="*{id}" name="id" id="id">
+                <div>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" th:field="*{apellido}" name="apellido">
+                </div>
+                <div>
+                    <label for="direccion">Direccion</label>
+                    <input type="text" id="direccion" th:field="*{direccion}" name="direccion">
+                </div>
+                <div>
+                    <label for="telefono">Telefono</label>
+                    <input type="text" id="telefono" th:field="*{telefono}" name="telefono">
+                </div>
+                
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </body>
+</html>
