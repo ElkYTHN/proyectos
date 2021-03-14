@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring Boot</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        <div>
+            <br>
+            <div>
+                <a href="/crear">Agregar Doctores</a>
+            </div>
+            <h2 th:if="${lista.isEmpty()}">No hay Doctores</h2>
+            <div th:if="${!lista.isEmpty()}">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Especialidad</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="doctores : ${lista}">
+                            <td th:text="${doctores.nombre}">
+                            <td th:text="${doctores.especialidad}">
+                            <td><a th:href="@{/actualizar/{id_doctor}(id=${doctores.id_doctor})}">Editar</a></td>
+                            <td><a th:href="@{/eliminar/{id_doctor}(id=${doctores.id_doctor})}">Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

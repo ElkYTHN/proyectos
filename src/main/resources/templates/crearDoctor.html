@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Añadir Doctor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h2>Agregar Doctor</h2>
+            <form action="#" th:action="@{/guardar}" th:object="${doctores}" method="post">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" th:field="*{nombre}" name="nombre">
+                </div>
+                <input type="hidden" th:field="*{id}" name="id" id="id">
+                <div>
+                    <label for="especialidad">Especialidad</label>
+                    <input type="text" id="especialidad" th:field="*{especialidad}" name="especialidad">
+                </div>
+                
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </body>
+</html>
